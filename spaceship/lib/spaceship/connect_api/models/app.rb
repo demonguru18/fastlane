@@ -78,7 +78,7 @@ module Spaceship
 
       def self.find(bundle_id, client: nil)
         client ||= Spaceship::ConnectAPI
-        return all(client: client, filter: { bundleId: bundle_id }).find do |app|
+        return all(client: client).find do |app|
           app.bundle_id == bundle_id
         end
       end
